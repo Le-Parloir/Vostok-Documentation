@@ -1,0 +1,20 @@
+site_name: WIKI Radio Vostok
+extra:
+  homepage: https://radiovostok.ch
+plugins:
+  - search
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.path
+    - search.suggest
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
