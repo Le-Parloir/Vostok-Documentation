@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="46ab02c5-a873-4521-9b60-0d532b010df0" name="wiki radio vostok" url="http://2u3i9.ftp.infomaniak.com">
+        <fileTransfer rootFolder="/sites/wiki.radiovostok.ch" host="2u3i9.ftp.infomaniak.com" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
