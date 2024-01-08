@@ -31,7 +31,7 @@ EXEC_SEND_HTTP_GET http://192.168.1.54/w?r=255&g=245&b=214
 EXEC_SEND_HTTP_GET http://192.168.1.54/v?r=255&g=245&b=214
 ```
 
-- REGIE UNMUTE (USER_11) : l'onde  passe en 'bleu Vostok'
+- REGIE UNMUTE (USER_11) : l'onde  passe en 'turquoise Vostok' et idem pour les logo 1/2/4/5
 
 ```
 EXEC_SEND_HTTP_GET http://192.168.1.50/w?r=0&b=75&g=175
@@ -39,6 +39,10 @@ EXEC_SEND_HTTP_GET http://192.168.1.51/w?r=0&b=75&g=175
 EXEC_SEND_HTTP_GET http://192.168.1.52/w?r=0&b=75&g=175
 EXEC_SEND_HTTP_GET http://192.168.1.53/w?r=0&b=75&g=175
 EXEC_SEND_HTTP_GET http://192.168.1.54/w?r=0&b=75&g=175
+EXEC_SEND_HTTP_GET http://192.168.1.50/v?r=0&b=75&g=175
+EXEC_SEND_HTTP_GET http://192.168.1.51/v?r=0&b=75&g=175
+EXEC_SEND_HTTP_GET http://192.168.1.53/v?r=0&b=75&g=175
+EXEC_SEND_HTTP_GET http://192.168.1.54/v?r=0&b=75&g=175
 ```
 
 - SILENCE SUR POSTE AUTO (USER_12) : l'onde passe en rouge
