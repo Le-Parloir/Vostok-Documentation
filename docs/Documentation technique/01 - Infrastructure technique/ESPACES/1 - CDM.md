@@ -97,6 +97,12 @@ SORTIES
 - allumage auto en cas de coupure électrique
 - nom de machine sur le réseau : dab
 - logins : cf  keepass
+- interface web encodeur : http://192.168.1.146:8080 / documentation : http://192.168.1.146:8080/help
+- pour les images : 
+  - via ftp dans carrousel/uniqID pour carrousel permanent
+  - via ftp dans live/uniqID pour image lié au programme en cours (reste max 5min)
+  - ou via API cf doc
+  - format d'image jpg 320 par 240 et en dessous de 15 ko
 
 ### Encodeur DAB : 
 
