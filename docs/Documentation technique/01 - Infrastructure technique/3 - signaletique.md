@@ -16,36 +16,45 @@ Ils indiquent les différents états de l'antenne et des studios
 
 - Boot default: solid yellow (100,100,0)
 
-- AUTOPLAY (USER_10) : logo et onde sont en 'beige Vostok'
+- AUTOPLAY ON (USER_10) : onde en 'beige Vostok'
 
 ```
 EXEC_SEND_HTTP_GET http://192.168.1.50/w?r=255&g=245&b=65
-EXEC_SEND_HTTP_GET http://192.168.1.50/v?r=255&g=245&b=65
 EXEC_SEND_HTTP_GET http://192.168.1.51/w?r=255&g=245&b=65
-EXEC_SEND_HTTP_GET http://192.168.1.51/v?r=255&g=245&b=65
 EXEC_SEND_HTTP_GET http://192.168.1.52/w?r=255&g=245&b=65
-EXEC_SEND_HTTP_GET http://192.168.1.52/v?r=255&g=245&b=65
 EXEC_SEND_HTTP_GET http://192.168.1.53/w?r=255&g=245&b=65
-EXEC_SEND_HTTP_GET http://192.168.1.53/v?r=255&g=245&b=65
 EXEC_SEND_HTTP_GET http://192.168.1.54/w?r=255&g=245&b=65
-EXEC_SEND_HTTP_GET http://192.168.1.54/v?r=255&g=245&b=65
 ```
 
-- REGIE UNMUTE (USER_11) : l'onde  passe en 'turquoise Vostok' et idem pour les logo 1/2/4/5
+- AUTOPLAY OFF (USER_11) : onde en 'turquoise Vostok'
 
-```
+``` 
 EXEC_SEND_HTTP_GET http://192.168.1.50/w?r=0&b=75&g=175
 EXEC_SEND_HTTP_GET http://192.168.1.51/w?r=0&b=75&g=175
 EXEC_SEND_HTTP_GET http://192.168.1.52/w?r=0&b=75&g=175
 EXEC_SEND_HTTP_GET http://192.168.1.53/w?r=0&b=75&g=175
 EXEC_SEND_HTTP_GET http://192.168.1.54/w?r=0&b=75&g=175
+```
+
+- REGIE UNMUTE (USER_12) : le V passe en 'turquoise Vostok' pour les logo 1/2/4/5
+
+```
 EXEC_SEND_HTTP_GET http://192.168.1.50/v?r=0&b=75&g=175
 EXEC_SEND_HTTP_GET http://192.168.1.51/v?r=0&b=75&g=175
 EXEC_SEND_HTTP_GET http://192.168.1.53/v?r=0&b=75&g=175
 EXEC_SEND_HTTP_GET http://192.168.1.54/v?r=0&b=75&g=175
 ```
 
-- SILENCE SUR POSTE AUTO (USER_12) : l'onde passe en rouge
+- REGIE MUTE (USER_13) : V en 'beige Vostok' sur les logos 1/2/4/5
+
+```
+EXEC_SEND_HTTP_GET http://192.168.1.50/v?r=255&g=245&b=65
+EXEC_SEND_HTTP_GET http://192.168.1.51/v?r=255&g=245&b=65
+EXEC_SEND_HTTP_GET http://192.168.1.53/v?r=255&g=245&b=65
+EXEC_SEND_HTTP_GET http://192.168.1.54/v?r=255&g=245&b=65
+```
+
+- SILENCE SUR POSTE AUTO (USER_16) : l'onde passe en rouge
 
 ```
 EXEC_SEND_HTTP_GET http://192.168.1.50/w?r=255
@@ -54,5 +63,3 @@ EXEC_SEND_HTTP_GET http://192.168.1.52/w?r=255
 EXEC_SEND_HTTP_GET http://192.168.1.53/w?r=255
 EXEC_SEND_HTTP_GET http://192.168.1.54/w?r=255
 ```
-
-
