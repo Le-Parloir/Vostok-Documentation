@@ -126,9 +126,9 @@ ENTREES ANALOG
 
 SORTIES ANALOG 
 
-| 1-2                         | 3-4                     | 5-8                          |
-|-----------------------------|-------------------------| -----------------------------|
-| Vostok monit. dep. ant. L-R | routing vers La VostokE | non assignées pour le moment |
+| 1-2                         | 3-4                     | 5-6                                             | 7-8                          |
+|-----------------------------|-------------------------|-------------------------------------------------|------------------------------|
+| Vostok monit. dep. ant. L-R | routing vers La VostokE | Vostok monit. dep. ant. L-R (copie pour stud 2) | non assignées pour le moment |
 
 SORTIES DIGITALES
 
