@@ -63,38 +63,45 @@ find "$SEARCH_DIR" -maxdepth 1 -type f \( -iname "*.mp3" -o -iname "*.wav" -o -i
 			
 			# Extraire le tag "title" avec ffprobe
 			title=$(ffprobe -v quiet -show_entries format_tags=title -of default=noprint_wrappers=1:nokey=1 "$file")
+			
+			# Extraire le tag "artist" avec ffprobe
+			title=$(ffprobe -v quiet -show_entries format_tags=artist -of default=noprint_wrappers=1:nokey=1 "$file")
     
 			# Nettoyer le titre (supprimer les espaces avant et après)
 			title=$(echo "$title" | xargs)
 			
-			# récupérer le grouping (en fait ISRF)
-			grouping=$(ffprobe -v quiet -show_entries format_tags=ISRF -of default=noprint_wrappers=1:nokey=1 "$file")
+			# récupérer le grouping (en fait ISRF ou TT1 ou TIT1)
+			groupingA=$(ffprobe -v quiet -show_entries format_tags=ISRF -of default=noprint_wrappers=1:nokey=1 "$file")
+			groupingB=$(ffprobe -v quiet -show_entries format_tags=TIT1 -of default=noprint_wrappers=1:nokey=1 "$file")
+			groupingC=$(ffprobe -v quiet -show_entries format_tags=TT1 -of default=noprint_wrappers=1:nokey=1 "$file")
 			
-			echo "grouping : $grouping"
+			echo "grouping : $groupingA $groupingB $groupingC"
     
 			# Nettoyer le grouping (supprimer les espaces avant et après)
-			grouping=$(echo "$grouping" | xargs)
+			groupingA=$(echo "$groupingA" | xargs)
+			groupingB=$(echo "$groupingB" | xargs)
+			groupingC=$(echo "$groupingC" | xargs)
 			
-			# Vérifier si le nom du fichier ou le titre contient [CH]
-			if [[ "$file" == *"[CH]"* ]] || [[ "$title" == *"[CH]"* ]]; then
+			# Vérifier si le nom du fichier ou le titre ou l'artiste contient [CH]
+			if [[ "$file" == *"[CH]"* ]] || [[ "$title" == *"[CH]"* ]] || [[ "$artist" == *"[CH]"* ]]; then
 				echo "CH ****"
 				((countCH++))
 			fi
 			
 			# Vérifier si le nom du fichier ou le titre contient [GE]
-			if [[ "$file" == *"[GE]"* ]] || [[ "$title" == *"[GE]"* ]]; then
+			if [[ "$file" == *"[GE]"* ]] || [[ "$title" == *"[GE]"* ]] || [[ "$artist" == *"[GE]"* ]]; then
 				echo "GE *****"
 				((countGE++))
 			fi
 			
 			# Vérifier si le grouping contient H
-			if [[ "$grouping" == *"H"* ]]; then
+			if [[ "$groupingA" == *"H"* ]] || [[ "$groupingB" == *"H"* ]] || [[ "$groupingC" == *"H"* ]]; then
 				echo "H !!!!"
 				((countH++))
 			fi
 			
 			# Vérifier si le grouping contient F
-			if [[ "$grouping" == *"F"* ]]; then
+			if [[ "$groupingA" == *"F"* ]] ||[[ "$groupingB" == *"F"* ]] || [[ "$groupingC" == *"F"* ]]; then
 				echo "F !!!!"
 				((countF++))
 			fi
