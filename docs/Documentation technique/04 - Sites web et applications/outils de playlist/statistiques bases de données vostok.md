@@ -2,7 +2,78 @@
 
 ## au 2 janvier 2025
 
-## script
+## recherches proppfrexx
+
+DB Playlist :
+```
+StartsWith([Genre], 'V')
+```
+--> 2970 entrées
+
+Playlistable global :
+```
+[Creation Age in Days] < 760.0 And StartsWith([Genre], 'V')
+```
+--> 1282 entrées
+
+CH global :
+```
+Contains([Filename], '[CH]') Or Contains([Artist], '[CH]') Or Contains([Title], '[CH]')
+```
+--> 482 entrées
+
+CH playlistable : 
+```
+(Contains([Filename], '[CH]') Or Contains([Artist], '[CH]') Or Contains([Title], '[CH]')) And [Creation Age in Days] < 760.0 And StartsWith([Genre], 'V')
+```
+--> 172 entrées
+
+GE global :
+```
+Contains([Filename], '[GE]') Or Contains([Artist], '[GE]') Or Contains([Title], '[GE]')
+```
+--> 325 entrées
+
+GE playlistable : 
+```
+(Contains([Filename], '[GE]') Or Contains([Artist], '[GE]') Or Contains([Title], '[GE]')) And [Creation Age in Days] < 760.0 And StartsWith([Genre], 'V')
+```
+--> 130 entrées
+
+F global :
+```
+StartsWith([Grouping], 'F')
+```
+--> 720 entrées
+
+F playlistable
+```
+StartsWith([Grouping], 'F') And [Creation Age in Days] < 760.0 And StartsWith([Genre], 'V')
+```
+--> 165 entrées
+
+H global :
+```
+StartsWith([Grouping], 'H')
+```
+--> 1766 entrées
+
+H playlistable :
+```
+StartsWith([Grouping], 'H') And [Creation Age in Days] < 760.0 And StartsWith([Genre], 'V')
+```
+--> 269 entrées
+
+## script sur les fichiers
+
+résultat (à prendre avec des pincettes) :
+
+Nombre de fichiers avec genre commençant par 'V ': 2947
+Nombre de fichiers avec genre OK et date de création < 2 ans : 1249
+Nombre de fichiers avec ces deux critères et [CH] : 87
+Nombre de fichiers avec ces deux critères et [GE] : 75
+Nombre de fichiers avec ces deux critères et grouping H : 161
+Nombre de fichiers avec ces deux critères et grouping F : 61
 
 ```
 #!/bin/bash
