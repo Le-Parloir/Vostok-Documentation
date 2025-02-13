@@ -1,0 +1,26 @@
+F
+
+And StartsWith([Grouping], 'F')
+
+H
+
+And StartsWith([Grouping], 'H')
+
+INTERNATIONAL
+
+ And Not Contains([Filename], '[CH]') And Not Contains([Filename], '[GE]') And Not Contains([Artist], '[CH]') And Not Contains([Artist], '[GE]') And Not Contains([Title], '[CH]') And Not Contains([Title], '[GE]')
+
+
+CH 
+
+ And (Contains([Filename], '[CH]') Or Contains([Artist], '[CH]') Or Contains([Title], '[CH]') Or Contains([Filename], '[GE]') Or Contains([Artist], '[GE]') Or Contains([Title], '[GE]'))
+
+INDIE ROCK M N (+ CH)
+
+~[Genre] = 'V indierock M' And [Title] < 'm' And ([AgeCreation] < 60.0 Or [AgeCreation] Between(120.0, 180.0) Or [AgeCreation] Between(240.0, 300.0) Or [AgeCreation] Between(360.0, 400.0) Or [AgeCreation] Between(460.0, 520.0) Or [AgeCreation] Between(580.0, 640.0) Or [AgeCreation] Between(700.0, 760.0)) And [Year] > '2012' And StartsWith([Grouping], 'H') And (Contains([Filename], '[CH]') Or Contains([Artist], '[CH]') Or Contains([Title], '[CH]') Or Contains([Filename], '[GE]') Or Contains([Artist], '[GE]') Or Contains([Title], '[GE]'))
+
+DATES
+
+ And ([Creation Age in Days] < 60.0 Or [Creation Age in Days] Between(120.0, 180.0) Or [Creation Age in Days] Between(240.0, 300.0) Or [Creation Age in Days] Between(360.0, 400.0) Or [Creation Age in Days] Between(460.0, 520.0) Or [Creation Age in Days] Between(580.0, 640.0) Or [Creation Age in Days] Between(700.0, 760.0))
+
+
